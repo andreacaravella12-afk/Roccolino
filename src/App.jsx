@@ -10,11 +10,6 @@ const TAVOLI = [
   ['PARETE DX-1', 5], ['PARETE DX-2', 2]
 ];
 
-const demoPrenotazioni = [
-  { id: 1, data: new Date().toISOString().slice(0, 10), ora: '19:30', cliente: 'Rossi', telefono: '', persone: 4, tavolo: 'F1-T2', note: '' },
-  { id: 2, data: new Date().toISOString().slice(0, 10), ora: '20:00', cliente: 'Bianchi', telefono: '', persone: 2, tavolo: 'PARETE SX-2', note: '' }
-];
-
 function readStorage(key, fallback) {
   try {
     const value = localStorage.getItem(key);
@@ -24,8 +19,22 @@ function readStorage(key, fallback) {
   }
 }
 
+function readPrenotazioni() {
+  const salvate = readStorage('roccolino-prenotazioni', []);
+  const pulite = salvate.filter((p) => !(
+    (p.id === 1 && p.cliente === 'Rossi') ||
+    (p.id === 2 && p.cliente === 'Bianchi')
+  ));
+
+  if (pulite.length !== salvate.length) {
+    localStorage.setItem('roccolino-prenotazioni', JSON.stringify(pulite));
+  }
+
+  return pulite;
+}
+
 function App() {
-  const [prenotazioni, setPrenotazioni] = useState(() => readStorage('roccolino-prenotazioni', demoPrenotazioni));
+  const [prenotazioni, setPrenotazioni] = useState(readPrenotazioni);
   const [targhe, setTarghe] = useState(() => readStorage('roccolino-targhe', []));
   const [modal, setModal] = useState(null);
   const [form, setForm] = useState({ data: new Date().toISOString().slice(0, 10), ora: '19:30', cliente: '', telefono: '', persone: 2, tavolo: '', note: '' });
@@ -36,7 +45,10 @@ function App() {
   const occupati = new Set(prenotazioniOggi.map((p) => p.tavolo));
   const coperti = prenotazioniOggi.reduce((totale, p) => totale + Number(p.persone), 0);
 
-  const tavoliDisponibili = useMemo(() => TAVOLI.filter(([nome, posti]) => !occupati.has(nome) && posti >= Number(form.persone)), [form.persone, prenotazioniOggi.length]);
+  const tavoliDisponibili = useMemo(
+    () => TAVOLI.filter(([nome, posti]) => !occupati.has(nome) && posti >= Number(form.persone)),
+    [form.persone, prenotazioniOggi.length]
+  );
 
   function salvaPrenotazioni(next) {
     setPrenotazioni(next);
