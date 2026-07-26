@@ -23,7 +23,8 @@ function readPrenotazioni() {
   const salvate = readStorage('roccolino-prenotazioni', []);
   const pulite = salvate.filter((p) => !(
     (p.id === 1 && p.cliente === 'Rossi') ||
-    (p.id === 2 && p.cliente === 'Bianchi')
+    (p.id === 2 && p.cliente === 'Bianchi') ||
+    (p.cliente?.trim().toLowerCase() === 'andrea caravella' && p.data === '2026-07-26' && p.ora === '12:30')
   ));
 
   if (pulite.length !== salvate.length) {
