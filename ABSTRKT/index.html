@@ -45,62 +45,34 @@ header{
   position:absolute;right:0;top:56px;width:100%;padding:8px;background:#101015;
   border:1px solid #2b2b35;border-radius:15px;box-shadow:0 20px 60px rgba(0,0,0,.4)
 }
-.menu nav a{
-  display:block;padding:13px 14px;border-radius:10px;color:#dedee5;font-weight:800
-}
+.menu nav a{display:block;padding:13px 14px;border-radius:10px;color:#dedee5;font-weight:800}
 .menu nav a:hover,.menu nav a:focus{background:#1e1e27;color:#fff}
 section{scroll-margin-top:96px;padding-bottom:74px}
 .hero{padding:76px 0 44px}.hero-logo{width:min(520px,88%);height:auto;margin:0 auto 34px;display:block;border-radius:22px}
 .kicker{font-size:.78rem;letter-spacing:.22em;color:var(--cyan);font-weight:900;text-transform:uppercase}
 h1{font-size:clamp(3rem,8vw,7rem);line-height:.9;letter-spacing:-.06em;margin:16px 0 24px;max-width:1050px}
-.gradient{
-  background:linear-gradient(90deg,var(--pink),var(--orange),var(--cyan),var(--violet));
-  -webkit-background-clip:text;background-clip:text;color:transparent
-}
+.gradient{background:linear-gradient(90deg,var(--pink),var(--orange),var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{font-size:clamp(1.08rem,2vw,1.42rem);line-height:1.7;color:#c7c7cf;max-width:870px}
 .splash{display:flex;gap:7px;margin-top:34px}.splash i{height:7px;border-radius:99px;flex:1}
-.splash i:nth-child(1){background:var(--pink)}.splash i:nth-child(2){background:var(--orange)}
-.splash i:nth-child(3){background:var(--cyan)}.splash i:nth-child(4){background:var(--violet)}
+.splash i:nth-child(1){background:var(--pink)}.splash i:nth-child(2){background:var(--orange)}.splash i:nth-child(3){background:var(--cyan)}.splash i:nth-child(4){background:var(--violet)}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.card{
-  padding:28px;border-radius:23px;background:linear-gradient(180deg,#15151c,#101015);
-  border:1px solid rgba(255,255,255,.07)
-}
+.card{padding:28px;border-radius:23px;background:linear-gradient(180deg,#15151c,#101015);border:1px solid rgba(255,255,255,.07)}
 .card .n{font-size:.78rem;font-weight:900;letter-spacing:.16em;color:var(--pink)}
-.card:nth-child(2) .n{color:var(--cyan)}.card:nth-child(3) .n{color:var(--orange)}
-.card:nth-child(4) .n{color:var(--violet)}
-.card h2{font-size:1.65rem;margin:13px 0 10px}
-.card p{margin:0;color:#babac4;line-height:1.75}
-.manifesto{
-  margin-top:24px;padding:38px;border-radius:26px;background:#f2eee7;color:#111318;
-  display:grid;grid-template-columns:1fr 1fr;gap:32px
-}
-.manifesto h2{font-size:clamp(2rem,4vw,4rem);margin:0;letter-spacing:-.05em}
-.manifesto p{line-height:1.8;color:#42434a}
+.card:nth-child(2) .n{color:var(--cyan)}.card:nth-child(3) .n{color:var(--orange)}.card:nth-child(4) .n{color:var(--violet)}
+.card h2{font-size:1.65rem;margin:13px 0 10px}.card p{margin:0;color:#babac4;line-height:1.75}
+.manifesto{margin-top:24px;padding:38px;border-radius:26px;background:#f2eee7;color:#111318;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.manifesto h2{font-size:clamp(2rem,4vw,4rem);margin:0;letter-spacing:-.05em}.manifesto p{line-height:1.8;color:#42434a}
 .story{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.tag{padding:8px 11px;border:1px solid #30303a;border-radius:999px;background:#191920;font-size:.83rem}
 .formgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}
-.panel{background:#121218;border:1px solid var(--line);border-radius:24px;padding:28px}
-.panel p{color:#b8b8c2;line-height:1.7}
-.field{margin-bottom:15px}
-label{display:block;font-weight:800;margin-bottom:7px}
-input,select,textarea{
-  width:100%;padding:14px 15px;border-radius:12px;border:1px solid #34343e;background:#0d0d12;color:white;outline:none
-}
+.panel{background:#121218;border:1px solid var(--line);border-radius:24px;padding:28px}.panel p{color:#b8b8c2;line-height:1.7}
+.field{margin-bottom:15px}label{display:block;font-weight:800;margin-bottom:7px}
+input,select,textarea{width:100%;padding:14px 15px;border-radius:12px;border:1px solid #34343e;background:#0d0d12;color:white;outline:none}
 textarea{min-height:140px;resize:vertical}
-.submit{
-  width:100%;border:0;border-radius:13px;padding:15px;color:white;font-weight:900;cursor:pointer;
-  background:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan))
-}
-.jump{
-  display:inline-flex;margin-top:24px;padding:14px 18px;border-radius:13px;
-  background:linear-gradient(90deg,var(--pink),var(--orange));font-weight:900
-}
+.submit{width:100%;border:0;border-radius:13px;padding:15px;color:white;font-weight:900;cursor:pointer;background:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan))}
+.jump{display:inline-flex;margin-top:24px;padding:14px 18px;border-radius:13px;background:linear-gradient(90deg,var(--pink),var(--orange));font-weight:900}
 footer{padding:30px 0;border-top:1px solid var(--line);color:#8f8f99}
-@media(max-width:780px){
- .nav{flex-direction:column;align-items:flex-start;padding:15px 0}.menu{min-width:0;width:100%}
- .grid,.story,.manifesto,.formgrid{grid-template-columns:1fr}.hero{padding-top:55px}
-}
+@media(max-width:780px){.nav{flex-direction:column;align-items:flex-start;padding:15px 0}.menu{min-width:0;width:100%}.grid,.story,.manifesto,.formgrid{grid-template-columns:1fr}.hero{padding-top:55px}}
 </style>
 </head>
 <body>
@@ -113,7 +85,7 @@ footer{padding:30px 0;border-top:1px solid var(--line);color:#8f8f99}
 <main class="wrap">
 <section id="home">
   <div class="hero">
-    <img class="hero-logo" src="abstrkt-logo.webp" alt="ABSTRKT Creative Studio logo">
+    <img class="hero-logo" src="logo.svg" alt="ABSTRKT Creative Studio logo">
     <div class="kicker">Andrea + Brigitta • Creative Studio</div>
     <h1>Idee che diventano <span class="gradient">identità.</span></h1>
     <p class="lead">ABSTRKT nasce per trasformare intuizioni, attività e progetti in qualcosa che sappia comunicare davvero. Grafica, tecnologia, AI, web e branding vengono messi al servizio di un obiettivo semplice: far emergere ciò che rende unico il cliente.</p>
@@ -158,5 +130,6 @@ footer{padding:30px 0;border-top:1px solid var(--line);color:#8f8f99}
 </section>
 </main>
 <footer><div class="wrap">© 2026 ABSTRKT Creative Studio — Andrea + Brigitta.</div></footer>
+<script>fetch("logo-small.b64.txt").then(r=>r.text()).then(b=>{const i=document.querySelector(".hero-logo");if(i)i.src="data:image/webp;base64,"+b.trim()}).catch(()=>{});</script>
 </body>
 </html>
