@@ -1,4 +1,4 @@
-name: Pubblica Roccolino su GitHub Pages
+name: Pubblica ABSTRKT su GitHub Pages
 
 on:
   push:
@@ -15,38 +15,23 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Scarica repository
-        uses: actions/checkout@v4
-
-      - name: Configura Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Installa dipendenze
-        run: npm install
-
-      - name: Compila applicazione
-        run: npm run build
-
-      - name: Configura Pages
-        uses: actions/configure-pages@v5
-
-      - name: Carica sito compilato
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
     steps:
+      - name: Scarica repository
+        uses: actions/checkout@v4
+
+      - name: Configura Pages
+        uses: actions/configure-pages@v5
+
+      - name: Carica ABSTRKT
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./ABSTRKT
+
       - name: Pubblica sito
         id: deployment
         uses: actions/deploy-pages@v4
