@@ -1,1 +1,1 @@
-ABSTRKT Creative Studio — demo pubblico. Il sito è in ABSTRKT/index.html.
+ABSTRKT Creative Studio — sito pubblico con logo reale incorporato come asset locale.
