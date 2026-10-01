@@ -1,0 +1,4 @@
+const form=document.getElementById('bookingForm');
+const date=document.getElementById('data');
+if(date){const now=new Date();const local=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().split('T')[0];date.min=local;}
+form?.addEventListener('submit',e=>{e.preventDefault();const v=id=>document.getElementById(id).value.trim();const d=v('data');const parts=d.split('-');const pretty=parts.length===3?parts[2]+'/'+parts[1]+'/'+parts[0]:d;const msg='Ciao Arianna & Max! Vorrei richiedere uno sgombero.\n\n👤 Nome e cognome: '+v('nome')+'\n📍 Indirizzo: '+v('indirizzo')+'\n📦 Materiale da sgomberare: '+v('materiale')+'\n📅 Data desiderata: '+pretty+'\n🕐 Orario desiderato: '+v('ora')+'\n📝 Specifiche: '+(v('specifiche')||'Nessuna')+'\n\nAttendo conferma di disponibilità, grazie!';window.open('https://wa.me/393519076442?text='+encodeURIComponent(msg),'_blank','noopener');});
