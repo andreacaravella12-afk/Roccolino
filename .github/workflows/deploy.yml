@@ -1,4 +1,4 @@
-name: Pubblica ABSTRKT su GitHub Pages
+name: Pubblica siti su GitHub Pages
 
 on:
   push:
@@ -27,10 +27,17 @@ jobs:
       - name: Configura Pages
         uses: actions/configure-pages@v5
 
-      - name: Carica ABSTRKT
+      - name: Prepara pubblicazione
+        run: |
+          mkdir -p _site
+          cp -a ABSTRKT/. _site/
+          mkdir -p _site/arianna-max
+          cp -a arianna-max/. _site/arianna-max/
+
+      - name: Carica siti
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./ABSTRKT
+          path: ./_site
 
       - name: Pubblica sito
         id: deployment
